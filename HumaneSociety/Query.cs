@@ -214,18 +214,31 @@ namespace HumaneSociety
         internal static int GetCategoryId(string categoryName)
         {
             Category categoryid = db.Categories.Where(c => c.Name == categoryName).FirstOrDefault();
+            if(categoryid == null)
+            {
+                return -1;
+            }
             return categoryid.CategoryId;  
         }
 
         internal static Room GetRoom(int animalId)
         {
-            
+            Room room = db.Rooms.Where(r => r.AnimalId == animalId).FirstOrDefault();
+            if(room == null)
+            {
+                return null;
+            }
+            else return room;
         }
         
         internal static int GetDietPlanId(string dietPlanName)
         {
             DietPlan dietPlan = db.DietPlans.Where(d => d.Name == dietPlanName).FirstOrDefault();
-            return dietPlan.DietPlanId;
+            if(dietPlan == null)
+            {
+                return -1;
+            }
+            else return dietPlan.DietPlanId;
         }
 
         // TODO: Adoption CRUD Operations
