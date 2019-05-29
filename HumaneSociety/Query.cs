@@ -195,7 +195,42 @@ namespace HumaneSociety
 
         internal static void UpdateAnimal(Animal animal, Dictionary<int, string> updates)
         {
-            throw new NotImplementedException();
+            if (updates.ContainsKey(1))
+            {
+                animal.CategoryId = Int32.Parse(updates[1]);
+                db.SubmitChanges();
+            }
+            if (updates.ContainsKey(2))
+            {
+                animal.Name = updates[2];
+                db.SubmitChanges();
+            }
+            if (updates.ContainsKey(3))
+            {
+                animal.Age = Int32.Parse(updates[3]);
+                db.SubmitChanges();
+            }
+            if (updates.ContainsKey(4))
+            {
+                animal.Demeanor = updates[4];
+                db.SubmitChanges();
+            }
+            if (updates.ContainsKey(5))
+            {
+                animal.KidFriendly = Boolean.Parse(updates[5]);
+                db.SubmitChanges();
+            }
+            if (updates.ContainsKey(6))
+            {
+                animal.PetFriendly = Boolean.Parse(updates[6]);
+                db.SubmitChanges();
+            }
+            if (updates.ContainsKey(7))
+            {
+                animal.Weight = Int32.Parse(updates[7]);
+                db.SubmitChanges();
+            }
+            
         }
 
         internal static void RemoveAnimal(Animal animal)
