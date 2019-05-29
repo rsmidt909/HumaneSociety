@@ -113,7 +113,7 @@ namespace HumaneSociety
                 RemoveEmployee();
             }
         }
-
+        
         private void AddEmployee()
         {
             Employee employee = new Employee();
@@ -133,6 +133,5 @@ namespace HumaneSociety
                 return;
             }
         }
-
     }
 }
