@@ -205,9 +205,45 @@ namespace HumaneSociety
         }
 
         // TODO: Animal Multi-Trait Search
-        internal static IQueryable<Animal> SearchForAnimalByMultipleTraits(Dictionary<int, string> updates) // parameter(s)?
-        {
-            throw new NotImplementedException();
+        internal static List<Animal> SearchForAnimalByMultipleTraits(Dictionary<int, string> updates){ // parameter(s)???????
+
+            List<Animal> animals = new List<Animal>();
+            if (updates.ContainsKey(1))
+            {
+                var primaryKey = db.Categories.Where(c => c.Name == updates[1]).Select(p => p.CategoryId).Single();
+                var animalType = db.Animals.Where(a => a.CategoryId == primaryKey);
+                animals.AddRange(animalType);                    
+            }
+            if (updates.ContainsKey(2))
+            {
+                animals.AddRange(db.Animals.Where(a => a.Name == updates[2]));
+            }
+            if (updates.ContainsKey(3))
+            {
+                animals.AddRange(db.Animals.Where(a => a.Age == Int32.Parse(updates[3])));
+            }
+            if (updates.ContainsKey(4))
+            {
+                animals.AddRange(db.Animals.Where(a => a.Demeanor == updates[4]));
+            }
+            if (updates.ContainsKey(5))
+            {
+                animals.AddRange(db.Animals.Where(a => a.KidFriendly == Boolean.Parse(updates[5])));
+            }
+            if (updates.ContainsKey(6))
+            {
+                animals.AddRange(db.Animals.Where(a => a.PetFriendly == Boolean.Parse(updates[6])));
+            }
+            if (updates.ContainsKey(7))
+            {
+                animals.AddRange(db.Animals.Where(a => a.Weight == Int32.Parse(updates[7])));
+            }
+            if (updates.ContainsKey(8))
+            {
+                animals.AddRange(db.Animals.Where(a => a.AnimalId == Int32.Parse(updates[8])));
+            }
+
+            return animals.Distinct().ToList();
         }
 
         // TODO: Misc Animal Things
