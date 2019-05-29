@@ -172,6 +172,7 @@ namespace HumaneSociety
                     employeeFromDb.LastName = employee.LastName;
                     employeeFromDb.EmployeeNumber = employee.EmployeeNumber;
                     employeeFromDb.Email = employee.Email;
+                    db.SubmitChanges();
                     break;
                 case "delete":
                     db.Employees.DeleteOnSubmit(employee);
@@ -326,14 +327,21 @@ namespace HumaneSociety
             db.SubmitChanges();
         }
 
-        internal static IQueryable<Adoption> GetPendingAdoptions()
+        internal static List<Adoption> GetPendingAdoptions()
         {
+
+            // clairfy on what a pending adoption is. Is that when an approval status == false? Its a string in the data table
+            foreach( db.Adoptions.Where(a=>a.ApprovalStatus == false) in db.Adoptions)
+            {
+
+            }
             throw new NotImplementedException();
         }
 
         internal static void UpdateAdoption(bool isAdopted, Adoption adoption)
         {
-            throw new NotImplementedException();
+            adoption.ApprovalStatus = isAdopted.ToString();
+            db.SubmitChanges();
         }
 
         internal static void RemoveAdoption(int animalId, int clientId)
