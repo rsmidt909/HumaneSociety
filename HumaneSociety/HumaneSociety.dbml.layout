@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 16.5" name="HumaneSociety">
+  <DataContextMoniker Name="/HumaneSocietyDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3b2a9625-aac9-40a2-92ed-e0ade0f19507" absoluteBounds="0.75, 11.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/HumaneSocietyDataContext/Address" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f12e04b-063d-4c90-97b2-b2fb2abaaa60" absoluteBounds="0.765, 12.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="922fd893-8332-4a79-bbb4-85cc9a86bbd7" absoluteBounds="6.25, 0.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/HumaneSocietyDataContext/Adoption" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db21d39f-d1eb-4343-9a95-4e9a7026a7ec" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4e28aa6c-6244-40fc-823c-f1ea3ad98441" absoluteBounds="3.5, 3.125, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/HumaneSocietyDataContext/Animal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6a63105-12d4-4d75-bb06-387dee36484d" absoluteBounds="3.515, 3.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="76acc773-aed5-4a77-b531-dc8c662d9213" absoluteBounds="6.25, 4, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/HumaneSocietyDataContext/AnimalShot" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c91b63b-ee98-4194-9709-75cfa21eb81b" absoluteBounds="6.265, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba4fe4ba-6dd7-40e4-b607-04984cc386cb" absoluteBounds="0.75, 4, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/HumaneSocietyDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0ba76f7e-efc7-4b1f-905a-38137d419b6d" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0b48141d-6c76-4f30-adfa-836fc8e47e28" absoluteBounds="3.5, 11.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/HumaneSocietyDataContext/Client" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0676f6a-c410-49c6-ab64-1c44b8fe8173" absoluteBounds="3.515, 11.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="481d52a7-1463-4473-a6b8-d6b7fad919b8" absoluteBounds="0.75, 1.375, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/HumaneSocietyDataContext/DietPlan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d887aa89-8402-46ab-a38f-f743de06cb33" absoluteBounds="0.765, 1.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff9a0f96-9ac8-4e35-bc69-ed779f8ad084" absoluteBounds="0.75, 6.75, 2, 2.1554996744791675">
+      <DataClassMoniker Name="/HumaneSocietyDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c6f8991-fe25-4bb7-b35c-5b22fbd494fa" absoluteBounds="0.765, 7.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6dd2ae76-ecb8-4e53-9f02-7ddca86b2334" absoluteBounds="6.25, 6.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/HumaneSocietyDataContext/Room" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3b41eb2-e85f-4b22-9855-5430ca97cc2d" absoluteBounds="6.265, 6.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e4ab6b1-6cb7-439d-886c-66628941f28e" absoluteBounds="3.5, 1, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/HumaneSocietyDataContext/Shot" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3e3aec22-de59-4c5c-88a8-1dbcbed7aa10" absoluteBounds="3.515, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f3b6972b-6910-498d-84dd-88fb880c9046" absoluteBounds="1.5, 14.875, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/HumaneSocietyDataContext/USState" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c7a3030-3b19-43a6-9be4-22a4c778dd70" absoluteBounds="1.5150000000000001, 15.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 3.125); (5.875 : 2.75); (5.875 : 2.89589680989583); (5.90982443490112 : 2.86107237499471 : JumpStart); (6.09017556509888 : 2.68072124479695 : JumpEnd); (6.25 : 2.52089680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HumaneSocietyDataContext/Animal/Animal_Adoption" />
+      <nodes>
+        <classShapeMoniker Id="4e28aa6c-6244-40fc-823c-f1ea3ad98441" />
+        <classShapeMoniker Id="922fd893-8332-4a79-bbb4-85cc9a86bbd7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.69314697265625); (5.94791666666667 : 4.69314697265625 : JumpStart); (6.11458333333333 : 4.69314697265625 : JumpEnd); (6.25 : 4.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HumaneSocietyDataContext/Animal/Animal_AnimalShot" />
+      <nodes>
+        <classShapeMoniker Id="4e28aa6c-6244-40fc-823c-f1ea3ad98441" />
+        <classShapeMoniker Id="76acc773-aed5-4a77-b531-dc8c662d9213" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.5 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HumaneSocietyDataContext/Category/Category_Animal" />
+      <nodes>
+        <classShapeMoniker Id="ba4fe4ba-6dd7-40e4-b607-04984cc386cb" />
+        <classShapeMoniker Id="4e28aa6c-6244-40fc-823c-f1ea3ad98441" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 11.5307682307692); (6.03125 : 10.9995182307692); (6.03125 : 1.60419640494792); (6.25 : 1.60419640494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HumaneSocietyDataContext/Client/Client_Adoption" />
+      <nodes>
+        <classShapeMoniker Id="0b48141d-6c76-4f30-adfa-836fc8e47e28" />
+        <classShapeMoniker Id="922fd893-8332-4a79-bbb4-85cc9a86bbd7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 12.6354484049479); (3.5 : 12.6354484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HumaneSocietyDataContext/Address/Address_Client" />
+      <nodes>
+        <classShapeMoniker Id="3b2a9625-aac9-40a2-92ed-e0ade0f19507" />
+        <classShapeMoniker Id="0b48141d-6c76-4f30-adfa-836fc8e47e28" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.95359537760417); (3.125 : 3.32859537760417); (3.125 : 2.75); (3.5 : 3.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/HumaneSocietyDataContext/DietPlan/DietPlan_Animal" />
+      <nodes>
+        <classShapeMoniker Id="481d52a7-1463-4473-a6b8-d6b7fad919b8" />
+        <classShapeMoniker Id="4e28aa6c-6244-40fc-823c-f1ea3ad98441" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.82774983723958); (4.5 : 7.82774983723958); (4.5 : 6.2420068359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HumaneSocietyDataContext/Employee/Employee_Animal" />
+      <nodes>
+        <classShapeMoniker Id="ff9a0f96-9ac8-4e35-bc69-ed779f8ad084" />
+        <classShapeMoniker Id="4e28aa6c-6244-40fc-823c-f1ea3ad98441" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 6.2420068359375); (5.0312525 : 6.907902890625); (5.94791666666667 : 6.907902890625 : JumpStart); (6.11458333333333 : 6.907902890625 : JumpEnd); (6.25 : 6.907902890625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HumaneSocietyDataContext/Animal/Animal_Room" />
+      <nodes>
+        <classShapeMoniker Id="4e28aa6c-6244-40fc-823c-f1ea3ad98441" />
+        <classShapeMoniker Id="6dd2ae76-ecb8-4e53-9f02-7ddca86b2334" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.1618455607472); (5.96875 : 2.6305955607472); (5.96875 : 4.31532148632813); (6.25 : 4.31532148632813)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HumaneSocietyDataContext/Shot/Shot_AnimalShot" />
+      <nodes>
+        <classShapeMoniker Id="3e4ab6b1-6cb7-439d-886c-66628941f28e" />
+        <classShapeMoniker Id="76acc773-aed5-4a77-b531-dc8c662d9213" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 14.875); (2.125 : 13.5208968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HumaneSocietyDataContext/USState/USState_Address" />
+      <nodes>
+        <classShapeMoniker Id="f3b6972b-6910-498d-84dd-88fb880c9046" />
+        <classShapeMoniker Id="3b2a9625-aac9-40a2-92ed-e0ade0f19507" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

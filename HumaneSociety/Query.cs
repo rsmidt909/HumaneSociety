@@ -151,10 +151,13 @@ namespace HumaneSociety
 
 
         //// TODO Items: ////
-        
+       
         // TODO: Allow any of the CRUD operations to occur here
         internal static void RunEmployeeQueries(Employee employee, string crudOperation)
         {
+           // Switch(crudOperation)
+            //    case"create":
+                    
             throw new NotImplementedException();
         }
 
