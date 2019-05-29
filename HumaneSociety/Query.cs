@@ -155,7 +155,29 @@ namespace HumaneSociety
         // TODO: Allow any of the CRUD operations to occur here
         internal static void RunEmployeeQueries(Employee employee, string crudOperation)
         {
-            //throw new NotImplementedException();
+            Employee employeeFromDb;
+            switch (crudOperation)
+            {
+
+                case "create":
+                    db.Employees.InsertOnSubmit(employee);
+                    db.SubmitChanges();
+                    break;
+                case "read":
+                    employeeFromDb = db.Employees.Where(e => e.EmployeeNumber == employee.EmployeeNumber).FirstOrDefault();
+                    break;
+                case "update":
+                    employeeFromDb = db.Employees.Where(e => e.EmployeeId == employee.EmployeeId).FirstOrDefault();
+                    employeeFromDb.FirstName = employee.FirstName;
+                    employeeFromDb.LastName = employee.LastName;
+                    employeeFromDb.EmployeeNumber = employee.EmployeeNumber;
+                    employeeFromDb.Email = employee.Email;
+                    break;
+                case "delete":
+                    db.Employees.DeleteOnSubmit(employee);
+                    db.SubmitChanges();
+                    break;
+            }
         }
 
         // TODO: Animal CRUD Operations
