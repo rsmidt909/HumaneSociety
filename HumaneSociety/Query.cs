@@ -244,7 +244,15 @@ namespace HumaneSociety
         // TODO: Adoption CRUD Operations
         internal static void Adopt(Animal animal, Client client)
         {
-            throw new NotImplementedException();
+            Adoption adopt = new Adoption();
+            adopt.ClientId = client.ClientId;
+            adopt.AnimalId = animal.AnimalId;
+            adopt.ApprovalStatus = null;
+            adopt.AdoptionFee = 25;
+            adopt.PaymentCollected = false;
+
+            db.Adoptions.InsertOnSubmit(adopt);
+            db.SubmitChanges();
         }
 
         internal static IQueryable<Adoption> GetPendingAdoptions()
