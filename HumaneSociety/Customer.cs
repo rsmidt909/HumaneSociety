@@ -86,6 +86,7 @@ namespace HumaneSociety
             {
                 Query.Adopt(animal, client);
                 UserInterface.DisplayUserOptions("Adoption request sent we will hold $75 adoption fee until processed");
+                Console.ReadKey();
             }
         }
 
