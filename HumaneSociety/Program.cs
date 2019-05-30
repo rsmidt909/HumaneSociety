@@ -10,9 +10,14 @@ namespace HumaneSociety
     {
         static void Main(string[] args)
         {
-            //string test = "Largkljhgfe Dog";
-            //int result = Query.GetDietPlanId(test);
-            PointOfEntry.Run();
+            Animal testanimal = new Animal();
+            
+            testanimal.AnimalId = 3;
+            Client clienttest = new Client();
+            clienttest.ClientId = 1;
+            Query.Adopt(testanimal, clienttest);
+             
+            //PointOfEntry.Run();
         }
     }
 }
