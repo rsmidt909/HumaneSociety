@@ -198,39 +198,34 @@ namespace HumaneSociety
         {
             if (updates.ContainsKey(1))
             {
-                animal.CategoryId = Int32.Parse(updates[1]);
-                db.SubmitChanges();
+                animal.CategoryId = Int32.Parse(updates[1]);                
             }
             if (updates.ContainsKey(2))
             {
                 animal.Name = updates[2];
-                db.SubmitChanges();
             }
             if (updates.ContainsKey(3))
             {
                 animal.Age = Int32.Parse(updates[3]);
-                db.SubmitChanges();
             }
             if (updates.ContainsKey(4))
             {
                 animal.Demeanor = updates[4];
-                db.SubmitChanges();
             }
             if (updates.ContainsKey(5))
             {
                 animal.KidFriendly = Boolean.Parse(updates[5]);
-                db.SubmitChanges();
             }
             if (updates.ContainsKey(6))
             {
                 animal.PetFriendly = Boolean.Parse(updates[6]);
-                db.SubmitChanges();
             }
             if (updates.ContainsKey(7))
             {
                 animal.Weight = Int32.Parse(updates[7]);
-                db.SubmitChanges();
             }
+
+            db.SubmitChanges();
             
         }
 
@@ -329,18 +324,21 @@ namespace HumaneSociety
 
         internal static List<Adoption> GetPendingAdoptions()
         {
-
-            // clairfy on what a pending adoption is. Is that when an approval status == false? Its a string in the data table
-            foreach( db.Adoptions.Where(a=>a.ApprovalStatus == false) in db.Adoptions)
-            {
-
-            }
-            throw new NotImplementedException();
+           var pendingAdoptions = db.Adoptions.Where(a => a.ApprovalStatus == "unnaproved");
+            return pendingAdoptions.ToList();
         }
 
         internal static void UpdateAdoption(bool isAdopted, Adoption adoption)
         {
-            adoption.ApprovalStatus = isAdopted.ToString();
+            if(isAdopted == true)
+            {
+                adoption.ApprovalStatus = "approved";
+            }
+            else
+            {
+                adoption.ApprovalStatus = "unapproved";
+            }
+            
             db.SubmitChanges();
         }
 
@@ -352,14 +350,16 @@ namespace HumaneSociety
         }
 
         // TODO: Shots Stuff
-        internal static IQueryable<AnimalShot> GetShots(Animal animal)
-        {
-            List<Shot> shotList = new List<Shot>();
-            foreach (int ShotId in animal.AnimalShots)
-            {
-                db.Shots.W(s => s.ShotId == ).FirstOrDefault();
-            }
-        }
+        //internal static IQueryable<AnimalShot> GetShots(Animal animal)
+
+        //{
+        //    List<Shot> shotList = new List<Shot>();
+        //    foreach (int ShotId in animal.AnimalShots)
+        //    {
+        //        db.Shots.W(s => s.ShotId == ).FirstOrDefault();
+        //    }
+
+        //}
 
         internal static void UpdateShot(string shotName, Animal animal)
         {
