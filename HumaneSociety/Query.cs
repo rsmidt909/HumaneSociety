@@ -354,6 +354,11 @@ namespace HumaneSociety
         // TODO: Shots Stuff
         internal static IQueryable<AnimalShot> GetShots(Animal animal)
         {
+            List<Shot> shotList = new List<Shot>();
+            foreach (int ShotId in animal.AnimalShots)
+            {
+
+            }
             throw new NotImplementedException();
         }
 
