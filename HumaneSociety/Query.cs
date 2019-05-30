@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HumaneSociety
 {
     public static class Query
-    {        
+    {
         static HumaneSocietyDataContext db;
 
         static Query()
@@ -17,11 +17,11 @@ namespace HumaneSociety
 
         internal static List<USState> GetStates()
         {
-            List<USState> allStates = db.USStates.ToList();       
+            List<USState> allStates = db.USStates.ToList();
 
             return allStates;
         }
-            
+
         internal static Client GetClient(string userName, string password)
         {
             Client client = db.Clients.Where(c => c.UserName == userName && c.Password == password).Single();
@@ -55,7 +55,7 @@ namespace HumaneSociety
                 newAddress.AddressLine1 = streetAddress;
                 newAddress.City = null;
                 newAddress.USStateId = stateId;
-                newAddress.Zipcode = zipCode;                
+                newAddress.Zipcode = zipCode;
 
                 db.Addresses.InsertOnSubmit(newAddress);
                 db.SubmitChanges();
@@ -90,13 +90,13 @@ namespace HumaneSociety
             Address updatedAddress = db.Addresses.Where(a => a.AddressLine1 == clientAddress.AddressLine1 && a.USStateId == clientAddress.USStateId && a.Zipcode == clientAddress.Zipcode).FirstOrDefault();
 
             // if the address isn't found in the Db, create and insert it
-            if(updatedAddress == null)
+            if (updatedAddress == null)
             {
                 Address newAddress = new Address();
                 newAddress.AddressLine1 = clientAddress.AddressLine1;
                 newAddress.City = null;
                 newAddress.USStateId = clientAddress.USStateId;
-                newAddress.Zipcode = clientAddress.Zipcode;                
+                newAddress.Zipcode = clientAddress.Zipcode;
 
                 db.Addresses.InsertOnSubmit(newAddress);
                 db.SubmitChanges();
@@ -106,11 +106,11 @@ namespace HumaneSociety
 
             // attach AddressId to clientFromDb.AddressId
             clientFromDb.AddressId = updatedAddress.AddressId;
-            
+
             // submit changes
             db.SubmitChanges();
         }
-        
+
         internal static void AddUsernameAndPassword(Employee employee)
         {
             Employee employeeFromDb = db.Employees.Where(e => e.EmployeeId == employee.EmployeeId).FirstOrDefault();
@@ -151,7 +151,7 @@ namespace HumaneSociety
 
 
         //// TODO Items: ////
-        
+
         // TODO: Allow any of the CRUD operations to occur here
         internal static void RunEmployeeQueries(Employee employee, string crudOperation)
         {
@@ -163,7 +163,7 @@ namespace HumaneSociety
                     db.Employees.InsertOnSubmit(employee);
                     db.SubmitChanges();
                     break;
-                case "read":
+                case "read":                    
                     employeeFromDb = db.Employees.Where(e => e.EmployeeNumber == employee.EmployeeNumber).FirstOrDefault();//This probably doesnt return anything
                     break;
                 case "update":
@@ -192,13 +192,13 @@ namespace HumaneSociety
         {
             Animal foundAnimal = db.Animals.Where(a => a.AnimalId == id).FirstOrDefault();
             return foundAnimal;
-        }       
+        }
 
         internal static void UpdateAnimal(Animal animal, Dictionary<int, string> updates)
         {
             if (updates.ContainsKey(1))
             {
-                animal.CategoryId = Int32.Parse(updates[1]);                
+                animal.Category.Name = (updates[1]);
             }
             if (updates.ContainsKey(2))
             {
@@ -226,7 +226,7 @@ namespace HumaneSociety
             }
 
             db.SubmitChanges();
-            
+
         }
 
         internal static void RemoveAnimal(Animal animal)
@@ -236,14 +236,14 @@ namespace HumaneSociety
         }
 
         // TODO: Animal Multi-Trait Search
-        internal static List<Animal> SearchForAnimalByMultipleTraits(Dictionary<int, string> updates){ // parameter(s)???????
+        internal static List<Animal> SearchForAnimalByMultipleTraits(Dictionary<int, string> updates) { // parameter(s)???????
 
             List<Animal> animals = new List<Animal>();
             if (updates.ContainsKey(1))
             {
                 var primaryKey = db.Categories.Where(c => c.Name == updates[1]).Select(p => p.CategoryId).Single();
                 var animalType = db.Animals.Where(a => a.CategoryId == primaryKey);
-                animals.AddRange(animalType);                    
+                animals.AddRange(animalType);
             }
             if (updates.ContainsKey(2))
             {
@@ -281,27 +281,27 @@ namespace HumaneSociety
         internal static int GetCategoryId(string categoryName)
         {
             Category categoryid = db.Categories.Where(c => c.Name == categoryName).FirstOrDefault();
-            if(categoryid == null)
+            if (categoryid == null)
             {
                 return -1;
             }
-            return categoryid.CategoryId;  
+            return categoryid.CategoryId;
         }
 
         internal static Room GetRoom(int animalId)
         {
             Room room = db.Rooms.Where(r => r.AnimalId == animalId).FirstOrDefault();
-            if(room == null)
+            if (room == null)
             {
                 return null;
             }
             else return room;
         }
-        
+
         internal static int GetDietPlanId(string dietPlanName)
         {
             DietPlan dietPlan = db.DietPlans.Where(d => d.Name == dietPlanName).FirstOrDefault();
-            if(dietPlan == null)
+            if (dietPlan == null)
             {
                 return -1;
             }
@@ -324,13 +324,13 @@ namespace HumaneSociety
 
         internal static List<Adoption> GetPendingAdoptions()
         {
-           var pendingAdoptions = db.Adoptions.Where(a => a.ApprovalStatus == "unnaproved");
+            var pendingAdoptions = db.Adoptions.Where(a => a.ApprovalStatus == "unnaproved");
             return pendingAdoptions.ToList();
         }
 
         internal static void UpdateAdoption(bool isAdopted, Adoption adoption)
         {
-            if(isAdopted == true)
+            if (isAdopted == true)
             {
                 adoption.ApprovalStatus = "approved";
             }
@@ -338,7 +338,7 @@ namespace HumaneSociety
             {
                 adoption.ApprovalStatus = "unapproved";
             }
-            
+
             db.SubmitChanges();
         }
 
@@ -350,20 +350,20 @@ namespace HumaneSociety
         }
 
         // TODO: Shots Stuff
-        //internal static IQueryable<AnimalShot> GetShots(Animal animal)
-
-        //{
-        //    List<Shot> shotList = new List<Shot>();
-        //    foreach (int ShotId in animal.AnimalShots)
-        //    {
-        //        db.Shots.W(s => s.ShotId == ).FirstOrDefault();
-        //    }
-
-        //}
+        internal static IQueryable<AnimalShot> GetShots(Animal animal)
+        {
+            throw new NotImplementedException();
+        }
 
         internal static void UpdateShot(string shotName, Animal animal)
         {
             throw new NotImplementedException();
         }
+
+        //internal static Employee ReturnReadEmployee(Employee employeeFromDb, Employee employee)
+        //{
+        //    employeeFromDb = db.Employees.Where(e => e.EmployeeNumber == employee.EmployeeNumber).FirstOrDefault();
+        //    return employeeFromDb;
+        //}
     }
 }
