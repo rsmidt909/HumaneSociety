@@ -164,7 +164,12 @@ namespace HumaneSociety
                     db.SubmitChanges();
                     break;
                 case "read":                    
-                    employeeFromDb = db.Employees.Where(e => e.EmployeeNumber == employee.EmployeeNumber).FirstOrDefault();//This probably doesnt return anything
+                    employeeFromDb = db.Employees.Where(e => e.EmployeeNumber == employee.EmployeeNumber).FirstOrDefault();
+                    Console.WriteLine(employeeFromDb.FirstName);
+                    Console.WriteLine(employeeFromDb.LastName);
+                    Console.WriteLine(employeeFromDb.EmployeeNumber);
+                    Console.WriteLine(employeeFromDb.Email);
+                    Console.ReadLine();
                     break;
                 case "update":
                     employeeFromDb = db.Employees.Where(e => e.EmployeeId == employee.EmployeeId).FirstOrDefault();
