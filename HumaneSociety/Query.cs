@@ -293,7 +293,8 @@ namespace HumaneSociety
             Room room = db.Rooms.Where(r => r.AnimalId == animalId).FirstOrDefault();
             if (room == null)
             {
-                return null;
+                UserInterface.NoRoomAssigned();
+                return CreateNewRoom(animalId);
             }
             else return room;
         }
@@ -310,22 +311,23 @@ namespace HumaneSociety
 
         // TODO: Adoption CRUD Operations
         internal static void Adopt(Animal animal, Client client)
-        {
+        {           
             Adoption adopt = new Adoption();
             adopt.ClientId = client.ClientId;
             adopt.AnimalId = animal.AnimalId;
-            adopt.ApprovalStatus = null;
+            adopt.ApprovalStatus = "unnapproved";
             adopt.AdoptionFee = 25;
             adopt.PaymentCollected = false;
 
-            db.Adoptions.InsertOnSubmit(adopt);
+            db.Adoptions.InsertOnSubmit(adopt);         
             db.SubmitChanges();
         }
 
         internal static List<Adoption> GetPendingAdoptions()
         {
-            var pendingAdoptions = db.Adoptions.Where(a => a.ApprovalStatus == "unnaproved");
-            return pendingAdoptions.ToList();
+            List<Adoption> pendingAdoption = new List<Adoption>();
+            pendingAdoption.AddRange(db.Adoptions.Where(a => a.ApprovalStatus == "unnapproved"));
+            return pendingAdoption;
         }
         internal static void UpdateAdoption(bool isAdopted, Adoption adoption)
         {
@@ -372,5 +374,16 @@ namespace HumaneSociety
         //    employeeFromDb = db.Employees.Where(e => e.EmployeeNumber == employee.EmployeeNumber).FirstOrDefault();
         //    return employeeFromDb;
         //}
+        internal static Room CreateNewRoom(int animalID)
+        {
+            Room newRoom = new Room();
+            newRoom.RoomId = UserInterface.GetIntegerData("ID", "the room's");
+            newRoom.RoomNumber = UserInterface.GetIntegerData("number", "the room's");
+            newRoom.AnimalId = animalID;
+            db.Rooms.InsertOnSubmit(newRoom);
+            db.SubmitChanges();
+            return newRoom;
+            
+        }
     }
 }

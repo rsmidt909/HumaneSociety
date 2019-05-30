@@ -220,5 +220,9 @@ namespace HumaneSociety
             }
             return searchParameters;
         }
+        public static void NoRoomAssigned()
+        {
+            Console.WriteLine("No room has been assigned to this animal");
+        }
     }
 }
