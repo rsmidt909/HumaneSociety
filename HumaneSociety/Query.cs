@@ -350,16 +350,16 @@ namespace HumaneSociety
         }
 
         // TODO: Shots Stuff
-        //internal static IQueryable<AnimalShot> GetShots(Animal animal)
+        internal static IQueryable<AnimalShot> GetShots(Animal animal)
 
-        //{
-        //    List<Shot> shotList = new List<Shot>();
-        //    foreach (int ShotId in animal.AnimalShots)
-        //    {
-        //        db.Shots.W(s => s.ShotId == ).FirstOrDefault();
-        //    }
-
-        //}
+        {
+            List<Shot> shotList = new List<Shot>();
+            //foreach (int ShotId in animal.AnimalShots)
+            //{
+            //    db.Shots.W(s => s.ShotId == ).FirstOrDefault();
+            //}
+            return null;
+        }
 
         internal static void UpdateShot(string shotName, Animal animal)
         {
