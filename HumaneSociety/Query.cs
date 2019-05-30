@@ -158,7 +158,6 @@ namespace HumaneSociety
             Employee employeeFromDb;
             switch (crudOperation)
             {
-
                 case "create":
                     db.Employees.InsertOnSubmit(employee);
                     db.SubmitChanges();
@@ -224,9 +223,7 @@ namespace HumaneSociety
             {
                 animal.Weight = Int32.Parse(updates[7]);
             }
-
             db.SubmitChanges();
-
         }
 
         internal static void RemoveAnimal(Animal animal)
@@ -273,7 +270,6 @@ namespace HumaneSociety
             {
                 animals.AddRange(db.Animals.Where(a => a.AnimalId == Int32.Parse(updates[8])));
             }
-
             return animals.Distinct().ToList();
         }
 
@@ -339,7 +335,6 @@ namespace HumaneSociety
             {
                 adoption.ApprovalStatus = "unapproved";
             }
-
             db.SubmitChanges();
         }
 
@@ -352,8 +347,6 @@ namespace HumaneSociety
 
         // TODO: Shots Stuff
         internal static IQueryable<AnimalShot> GetShots(Animal animal)
-
-
         {
             List<Shot> shotList = new List<Shot>();
             //foreach (int ShotId in animal.AnimalShots)
@@ -361,7 +354,6 @@ namespace HumaneSociety
             //    db.Shots.W(s => s.ShotId == ).FirstOrDefault();
             //}
             return null;
-
         }
 
         internal static void UpdateShot(string shotName, Animal animal)
