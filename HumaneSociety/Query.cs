@@ -357,9 +357,8 @@ namespace HumaneSociety
             List<Shot> shotList = new List<Shot>();
             foreach (int ShotId in animal.AnimalShots)
             {
-
+                db.Shots.W(s => s.ShotId == ).FirstOrDefault();
             }
-            throw new NotImplementedException();
         }
 
         internal static void UpdateShot(string shotName, Animal animal)
