@@ -324,13 +324,8 @@ namespace HumaneSociety
 
         internal static List<Adoption> GetPendingAdoptions()
         {
-
-            // clairfy on what a pending adoption is. Is that when an approval status == false? Its a string in the data table
-            foreach( db.Adoptions.Where(a=>a.ApprovalStatus == false) in db.Adoptions)
-            {
-
-            }
-            throw new NotImplementedException();
+           var pendingAdoptions = db.Adoptions.Where(a => a.ApprovalStatus == "unnaproved");
+            return pendingAdoptions.ToList();
         }
 
         internal static void UpdateAdoption(bool isAdopted, Adoption adoption)
@@ -356,12 +351,7 @@ namespace HumaneSociety
 
         // TODO: Shots Stuff
         internal static IQueryable<AnimalShot> GetShots(Animal animal)
-        {
-            List<Shot> shotList = new List<Shot>();
-            foreach (int ShotId in animal.AnimalShots)
-            {
-
-            }
+        {          
             throw new NotImplementedException();
         }
 
