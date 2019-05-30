@@ -293,7 +293,8 @@ namespace HumaneSociety
             Room room = db.Rooms.Where(r => r.AnimalId == animalId).FirstOrDefault();
             if (room == null)
             {
-                return null;
+                UserInterface.NoRoomAssigned();
+                return CreateNewRoom(animalId);
             }
             else return room;
         }
@@ -365,5 +366,13 @@ namespace HumaneSociety
         //    employeeFromDb = db.Employees.Where(e => e.EmployeeNumber == employee.EmployeeNumber).FirstOrDefault();
         //    return employeeFromDb;
         //}
+        internal static Room CreateNewRoom(int animalID)
+        {
+            Room newRoom = new Room();
+            newRoom.RoomId = UserInterface.GetIntegerData("ID", "the room's");
+            newRoom.RoomNumber = UserInterface.GetIntegerData("number", "the room's");
+            newRoom.AnimalId = animalID;
+            return newRoom;
+        }
     }
 }
